@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="detail">
+
+    <div id="form">
+        <h2><span>Contact Us</span></h2>
+
+        <form action="{{ request.path }}" method="post">
+            <table width="100%">
+                {{ form.as_table }}
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <input type="submit" value="Send"/>
+                        <input type="reset" value="Reset" class="button"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</div>
+{% endblock %}
