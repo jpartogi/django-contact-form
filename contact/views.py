@@ -1,3 +1,4 @@
+# $Id: views.py 12a8f959a275 2009/08/24 12:07:54 jpartogi $
 from django.core.mail import send_mail
 from django.shortcuts import render_to_response
 from django.template import RequestContext
@@ -5,7 +6,7 @@ from django.template import RequestContext
 from contact.forms import ContactForm
 
 def form(request):
-    
+
     if request.method == 'POST':
         form = ContactForm(request.POST)
 
@@ -22,6 +23,7 @@ def form(request):
     else:
         form = ContactForm()
 
-    return render_to_response('contact/form.html', {'form': form,
-                                                    'request' : request},
-                context_instance=RequestContext(request))
+    return render_to_response('contact/form.html', {
+        'form': form,
+        'request' : request
+    }, context_instance=RequestContext(request))
