@@ -1,11 +1,20 @@
+{% load i18n %}
+
 {% block content %}
 
-    <h2>Contact Us</h2>
+    {% if notifications %}
+    <ul id="notifications">
+        {% for notification in notifications %}<li class="{{ notification.type }}">{{ notification.content }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <h2>{% trans 'Contact Us' %}</h2>
 
     <form action="{{ request.path }}" method="post">
         {{ form.as_p }}
-        <p>{{ html_captcha|safe }}</p>
-        <p><input type="submit" value="Send Your Message"/></p>
+        {{ html_captcha|safe }}
+        <p><input type="submit" value="{% trans 'Send Your Message' %}"/></p>
     </form>
 
 {% endblock %}

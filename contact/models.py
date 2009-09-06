@@ -1,6 +1,7 @@
-# $Id: models.py b225c5739f6e 2009/09/01 11:18:01 jpartogi $
+# $Id: models.py 0ec7942788dd 2009/09/06 11:05:09 jpartogi $
 
 from django.db import models
+from django.utils.translation import ugettext as _
 
 class Department(models.Model):
     name = models.CharField(max_length=50)
@@ -9,6 +10,9 @@ class Department(models.Model):
 
     def __unicode__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return "/department/%s" % ( self.id )
 
 class Subject(models.Model):
     title = models.CharField(max_length=50)
@@ -19,8 +23,8 @@ class Subject(models.Model):
         return self.title
 
 class Message(models.Model):
-    sender_name = models.CharField(max_length=50, verbose_name='Your Name')
-    sender_email = models.EmailField(verbose_name='Your E-mail')
-    subject = models.ForeignKey(Subject)
-    message = models.TextField()
+    sender_name = models.CharField(max_length=50, verbose_name= _('your name'))
+    sender_email = models.EmailField(verbose_name= _('your e-mail'))
+    subject = models.ForeignKey(Subject, verbose_name= _('subject'))
+    message = models.TextField(verbose_name= _('message'))
     created = models.DateTimeField(auto_now_add=True)
