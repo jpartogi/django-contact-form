@@ -1,4 +1,4 @@
-# $Id: admin.py e8fd065c6a51 2009/09/06 13:36:31 jpartogi $
+# $Id: admin.py e01f24bde54b 2009/09/06 13:55:06 jpartogi $
 
 from django.contrib import admin
 from django.core import urlresolvers
@@ -20,6 +20,8 @@ class DepartmentAdmin(admin.ModelAdmin):
 
 class MessageAdmin(admin.ModelAdmin):
     list_display = ('subject', 'sender', 'created')
+    list_filter = ('created', 'subject')
+    search_fields = ('sender_name', 'created')
 
     def sender(self, obj):
         return '<a href="mailto:%s">%s</a>' % (obj.sender_email, obj.sender_name)
