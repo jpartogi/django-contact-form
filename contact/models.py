@@ -1,4 +1,4 @@
-# $Id: models.py 0ec7942788dd 2009/09/06 11:05:09 jpartogi $
+# $Id: models.py 324bfbdd83ad 2009/09/06 13:23:11 jpartogi $
 
 from django.db import models
 from django.utils.translation import ugettext as _
@@ -27,4 +27,4 @@ class Message(models.Model):
     sender_email = models.EmailField(verbose_name= _('your e-mail'))
     subject = models.ForeignKey(Subject, verbose_name= _('subject'))
     message = models.TextField(verbose_name= _('message'))
-    created = models.DateTimeField(auto_now_add=True)
+    created = models.DateTimeField(auto_now_add=True, verbose_name= _('sent'))
