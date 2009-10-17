@@ -10,7 +10,7 @@ class SubjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'department_url')
 
     def department_url(self, obj):
-        change_url = urlresolvers.reverse('admin:contact_department_change', args=(obj.department.id,))
+        change_url = urlresolvers.reverse('admin:contact_form_department_change', args=(obj.department.id,))
         return '<a href="%s">%s</a>' % (change_url, obj.department.name)
     department_url.allow_tags = True
     department_url.short_description = _('department')

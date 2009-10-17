@@ -2,6 +2,7 @@
 from django.core.mail import send_mail
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from django.utils.translation import ugettext as _
 
 from contact_form.forms import ContactForm
 
