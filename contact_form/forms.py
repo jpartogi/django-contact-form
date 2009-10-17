@@ -4,7 +4,7 @@ from django import forms
 from django.forms import ModelForm
 from django.utils.translation import ugettext as _
 
-from contact.models import Message
+from contact_form.models import Message
 
 # Override the labels
 class ContactForm(ModelForm):

@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.core import urlresolvers
 from django.utils.translation import ugettext as _
 
-from contact.models import *
+from contact_form.models import *
 
 class SubjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'department_url')

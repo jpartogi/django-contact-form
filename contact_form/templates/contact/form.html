@@ -13,7 +13,6 @@
 
     <form action="{{ request.path }}" method="post">
         {{ form.as_p }}
-        {{ html_captcha|safe }}
         <p><input type="submit" value="{% trans 'Send Your Message' %}"/></p>
     </form>
 
