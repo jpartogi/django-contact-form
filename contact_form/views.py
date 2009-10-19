@@ -11,12 +11,14 @@ def form(request):
 
         if form.is_valid():
             contact = form.save()
-
-            request.notifications.create(_('The message has been sent successfully'), 'success')
+            # TODO: Externalize this? Is i18n good enough?
+            message = "Thank you for contacting us. We'll get back to you shortly."
+            request.notifications.create(_(message),
+                'success')
     else:
         form = ContactForm()
 
-    return render_to_response('contact/form.html', {
+    return render_to_response('contact_form/form.html', {
         'form': form,
         'request' : request,
     }, context_instance=RequestContext(request))

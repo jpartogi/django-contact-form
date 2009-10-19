@@ -26,7 +26,7 @@ class MessageAdmin(admin.ModelAdmin):
     def sender(self, obj):
         return '<a href="mailto:%s">%s</a>' % (obj.sender_email, obj.sender_name)
     sender.allow_tags = True
-    sender.short_description = 'sender'
+    sender.short_description = _('sender')
 
 admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Department, DepartmentAdmin)
