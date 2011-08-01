@@ -1,0 +1,10 @@
+/*hdie the field for human users*/
+#id_is_spam {
+	display:none;
+}
+
+#id_tricky {
+	display:none;
+}
+
+

@@ -1,19 +1,34 @@
+{%extends "base.html"%}
 {% load i18n %}
+
+{% block extra_head %}
+  {{ form.media }}
+{% endblock %}
 
 {% block content %}
 
-    {% if notifications %}
-    <ul id="notifications">
-        {% for notification in notifications %}<li class="{{ notification.type }}">{{ notification.content }}</li>
+    {% if messages %}
+    <ul id="messages">
+        {% for msg in messages %}<li class="{{ msg.tags }}">{{ msg }}</li>
         {% endfor %}
     </ul>
     {% endif %}
 
+    {%if not message%}
     <h2>{% trans 'Contact Us' %}</h2>
 
     <form action="{{ request.path }}" method="post">
         {{ form.as_p }}
+	{% csrf_token %}
         <p><input type="submit" value="{% trans 'Send Your Message' %}"/></p>
     </form>
+
+    {%else%}
+    <p> 
+    <span class="message-title">{% trans 'Your email' %}</span>: {{ message.sender_email }}<br/>
+    <span class="message-title">{% trans 'Your Message' %}</span>: {{ message.content|linebreaksbr }} 
+    </p>
+
+    {%endif%}
 
 {% endblock %}

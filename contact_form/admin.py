@@ -19,7 +19,7 @@ class DepartmentAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'phone')
 
 class MessageAdmin(admin.ModelAdmin):
-    list_display = ('subject', 'sender', 'created')
+    list_display = ('subject', 'sender', 'created', 'is_spam')
     list_filter = ('created', 'subject')
     search_fields = ('sender_name', 'created')
 
