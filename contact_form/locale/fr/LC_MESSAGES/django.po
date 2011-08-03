@@ -2,20 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-31 22:02-0500\n"
-"PO-Revision-Date: 2011-08-01 05:06\n"
+"POT-Creation-Date: 2011-08-02 22:18-0500\n"
+"PO-Revision-Date: 2011-08-02 08:17\n"
 "Last-Translator:   <a@a.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: \n"
 "Plural-Forms: nplurals=2; plural=(n > 1)\n"
 "X-Translated-Using: django-rosetta 0.6.2\n"
 
@@ -43,11 +43,11 @@ msgstr "autre1"
 msgid "are you a robot?"
 msgstr "vous-est un robot?"
 
-#: forms.py:35
+#: forms.py:38
 msgid "other"
 msgstr "autre"
 
-#: forms.py:37
+#: forms.py:40
 #, python-format
 msgid "No \"other\" Departement is in the DataBase :%s"
 msgstr "\"autre\" Departement n'existe pas dans la Base de Donne: %s"
@@ -98,20 +98,18 @@ msgstr "Formulaire de contact: %s"
 msgid "Verify your info, may be your email is wrong"
 msgstr "Vérifiez vos infos, peut-être votre e-mail est erronée"
 
-#: templates/contact_form/form.html:15
+#: templates/contact_form/form.html:18
 msgid "Contact Us"
 msgstr "Contactez-nous"
 
-#: templates/contact_form/form.html:20
+#: templates/contact_form/form.html:24
 msgid "Send Your Message"
 msgstr "Envoyer votre message"
 
-#: templates/contact_form/form.html:25
-#, fuzzy
+#: templates/contact_form/form.html:30
 msgid "Your email"
 msgstr "Votre e-mail"
 
-#: templates/contact_form/form.html:26
-#, fuzzy
+#: templates/contact_form/form.html:31
 msgid "Your Message"
-msgstr "Envoyer votre message"
+msgstr "Votre message"
